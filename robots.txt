@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
-
-Sitemap: https://borne-recharge-voiture-electrique-angers-49.pages.dev/sitemap.xml
+Sitemap: https://roughz.github.io/borne-recharge-voiture-electrique-angers-49/sitemap.xml
