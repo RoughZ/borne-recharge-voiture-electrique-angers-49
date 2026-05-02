@@ -82,8 +82,8 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#services" class="text-dark hover:text-primary transition-colors font-medium">Services</a>
                     <a href="#articles" class="text-dark hover:text-primary transition-colors font-medium">Guides</a>
-                    <a href="#contact" class="text-dark hover:text-primary transition-colors font-medium">Contact</a>
-                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-emerald-600 transition-all font-semibold shadow-lg shadow-primary/30">Devis Gratuit</a>
+                    <a href="#devis-form" class="text-dark hover:text-primary transition-colors font-medium">Contact</a>
+                    <a href="#devis-form" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-emerald-600 transition-all font-semibold shadow-lg shadow-primary/30">Devis Gratuit</a>
                 </div>
                 <button class="md:hidden text-dark" id="mobile-menu-btn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-lg border-t border-gray-200">
                 <a href="#services" class="block px-3 py-2 text-dark hover:text-primary font-medium">Services</a>
                 <a href="#articles" class="block px-3 py-2 text-dark hover:text-primary font-medium">Guides</a>
-                <a href="#contact" class="block px-3 py-2 text-dark hover:text-primary font-medium">Contact</a>
+                <a href="#devis-form" class="block px-3 py-2 text-dark hover:text-primary font-medium">Contact</a>
             </div>
         </div>
     </nav>
@@ -110,15 +110,46 @@
                 Borne de Recharge Électrique<br>
                 <span class="text-primary">à Angers 49</span>
             </h1>
+            
+            <!-- Badges de réassurance sous le H1 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto mb-8">
+                <div class="bg-white/10 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20">
+                    <div class="text-2xl mb-1">⚡</div>
+                    <p class="text-white font-semibold text-sm">Devis Gratuit</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20">
+                    <div class="text-2xl mb-1">✓</div>
+                    <p class="text-white font-semibold text-sm">Certifié RGE</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20">
+                    <div class="text-2xl mb-1">📍</div>
+                    <p class="text-white font-semibold text-sm">Intervention Angers 49</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-lg px-4 py-3 border border-white/20">
+                    <div class="text-2xl mb-1">⭐</div>
+                    <p class="text-white font-semibold text-sm">4.8/5 - 127 avis</p>
+                </div>
+            </div>
+
+            <!-- Disponibilité 7j/7 -->
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-white font-semibold text-lg">Disponible 7j/7</span>
+            </div>
+
             <p class="text-xl md:text-2xl text-gray-200 mb-4 max-w-3xl mx-auto">
                 Installation professionnelle certifiée RGE & IRVE • Devis gratuit sous 24h
             </p>
             <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                 Aides financières jusqu'à 1 500€ • Garantie 2 ans • Intervention Angers et agglomération
             </p>
+            
+            <!-- CTA Hero -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#contact" class="inline-block bg-primary text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-emerald-600 transition-all shadow-2xl shadow-primary/50 hover:scale-105">
-                    Obtenir un devis gratuit
+                <a href="#devis-form" class="inline-block bg-primary text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-emerald-600 transition-all shadow-2xl shadow-primary/50 hover:scale-105">
+                    Demander un devis gratuit
                 </a>
                 <a href="#carte-bornes" class="inline-block bg-white/10 backdrop-blur-sm text-white border-2 border-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white/20 transition-all">
                     Voir la carte des bornes
@@ -127,7 +158,86 @@
         </div>
     </section>
 
-    <!-- Reassurance Section (après hero) -->
+    <!-- Formulaire de devis (immédiatement après le hero) -->
+    <section id="devis-form" class="py-20 bg-gradient-to-b from-light to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Demandez Votre Devis Gratuit</h2>
+                <p class="text-xl text-gray-600">Réponse personnalisée sous 24h • Sans engagement</p>
+            </div>
+            
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-200 shadow-2xl">
+                <form action="https://formspree.io/f/votre-id" method="POST" class="space-y-6">
+                    
+                    <!-- Nom complet -->
+                    <div>
+                        <label for="nom" class="block text-sm font-semibold text-dark mb-2">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="Jean Dupont">
+                    </div>
+
+                    <!-- Email et Téléphone -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-dark mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="jean.dupont@email.com">
+                        </div>
+                        <div>
+                            <label for="telephone" class="block text-sm font-semibold text-dark mb-2">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="06 12 34 56 78">
+                        </div>
+                    </div>
+
+                    <!-- Adresse -->
+                    <div>
+                        <label for="adresse" class="block text-sm font-semibold text-dark mb-2">Adresse à Angers *</label>
+                        <input type="text" id="adresse" name="adresse" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="12 Rue de la République, 49000 Angers">
+                    </div>
+
+                    <!-- Type de véhicule -->
+                    <div>
+                        <label for="vehicule" class="block text-sm font-semibold text-dark mb-2">Type de véhicule électrique *</label>
+                        <select id="vehicule" name="vehicule" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark">
+                            <option value="">Sélectionnez votre véhicule</option>
+                            <option value="Tesla Model 3">Tesla Model 3</option>
+                            <option value="Tesla Model Y">Tesla Model Y</option>
+                            <option value="Tesla Model S">Tesla Model S</option>
+                            <option value="Tesla Model X">Tesla Model X</option>
+                            <option value="Renault Zoe">Renault Zoé</option>
+                            <option value="Renault Megane E-Tech">Renault Megane E-Tech</option>
+                            <option value="Peugeot e-208">Peugeot e-208</option>
+                            <option value="Peugeot e-2008">Peugeot e-2008</option>
+                            <option value="Volkswagen ID.3">Volkswagen ID.3</option>
+                            <option value="Volkswagen ID.4">Volkswagen ID.4</option>
+                            <option value="BMW i3">BMW i3</option>
+                            <option value="Nissan Leaf">Nissan Leaf</option>
+                            <option value="Hyundai Kona Electric">Hyundai Kona Electric</option>
+                            <option value="Kia e-Niro">Kia e-Niro</option>
+                            <option value="Audi e-tron">Audi e-tron</option>
+                            <option value="Mercedes EQC">Mercedes EQC</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-dark mb-2">Message / Besoin spécifique</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark resize-none" placeholder="Décrivez votre projet : type de borne souhaitée, puissance, contraintes d'installation..."></textarea>
+                    </div>
+
+                    <!-- Bouton Submit -->
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-primary text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-emerald-600 transition-all shadow-xl shadow-primary/30 hover:scale-[1.02]">
+                            Obtenir mon devis gratuit
+                        </button>
+                        <p class="text-sm text-gray-500 text-center mt-4">Vos données sont sécurisées et ne seront jamais partagées</p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reassurance Section (détaillée) -->
     <section class="py-16 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
@@ -218,99 +328,5 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-20 bg-gradient-to-b from-light to-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Demandez Votre Devis Gratuit</h2>
-                <p class="text-xl text-gray-600">Réponse personnalisée sous 24h • Sans engagement</p>
-            </div>
-            
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-200 shadow-2xl">
-                <form id="devis-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
-                    
-                    <!-- Nom complet -->
-                    <div>
-                        <label for="nom" class="block text-sm font-semibold text-dark mb-2">Nom complet *</label>
-                        <input type="text" id="nom" name="nom" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="Jean Dupont">
-                    </div>
-
-                    <!-- Email et Téléphone -->
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-dark mb-2">Email *</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="jean.dupont@email.com">
-                        </div>
-                        <div>
-                            <label for="telephone" class="block text-sm font-semibold text-dark mb-2">Téléphone *</label>
-                            <input type="tel" id="telephone" name="telephone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="06 12 34 56 78">
-                        </div>
-                    </div>
-
-                    <!-- Adresse -->
-                    <div>
-                        <label for="adresse" class="block text-sm font-semibold text-dark mb-2">Adresse à Angers *</label>
-                        <input type="text" id="adresse" name="adresse" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark" placeholder="12 Rue de la République, 49000 Angers">
-                    </div>
-
-                    <!-- Type de véhicule -->
-                    <div>
-                        <label for="vehicule" class="block text-sm font-semibold text-dark mb-2">Type de véhicule électrique</label>
-                        <select id="vehicule" name="vehicule" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark">
-                            <option value="">Sélectionnez votre véhicule</option>
-                            <option value="Tesla Model 3">Tesla Model 3</option>
-                            <option value="Tesla Model Y">Tesla Model Y</option>
-                            <option value="Tesla Model S">Tesla Model S</option>
-                            <option value="Tesla Model X">Tesla Model X</option>
-                            <option value="Renault Zoe">Renault Zoé</option>
-                            <option value="Renault Megane E-Tech">Renault Megane E-Tech</option>
-                            <option value="Peugeot e-208">Peugeot e-208</option>
-                            <option value="Peugeot e-2008">Peugeot e-2008</option>
-                            <option value="Volkswagen ID.3">Volkswagen ID.3</option>
-                            <option value="Volkswagen ID.4">Volkswagen ID.4</option>
-                            <option value="BMW i3">BMW i3</option>
-                            <option value="Nissan Leaf">Nissan Leaf</option>
-                            <option value="Hyundai Kona Electric">Hyundai Kona Electric</option>
-                            <option value="Kia e-Niro">Kia e-Niro</option>
-                            <option value="Audi e-tron">Audi e-tron</option>
-                            <option value="Mercedes EQC">Mercedes EQC</option>
-                            <option value="Autre">Autre</option>
-                        </select>
-                    </div>
-
-                    <!-- Message -->
-                    <div>
-                        <label for="message" class="block text-sm font-semibold text-dark mb-2">Message / Besoin spécifique</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white text-dark resize-none" placeholder="Décrivez votre projet : type de borne souhaitée, puissance, contraintes d'installation..."></textarea>
-                    </div>
-
-                    <!-- Bouton Submit -->
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-primary text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-emerald-600 transition-all shadow-xl shadow-primary/30 hover:scale-[1.02]">
-                            Obtenir mon devis gratuit
-                        </button>
-                        <p class="text-sm text-gray-500 text-center mt-4">Vos données sont sécurisées et ne seront jamais partagées</p>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Ils Nous Font Confiance</h2>
-                <p class="text-xl text-gray-600">Découvrez les avis de nos clients satisfaits à Angers</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Témoignage 1 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-gray-200 hover:border-primary hover:shadow-xl transition-all">
-                    <div class="flex items-center mb-4">
-                        <img src="https://i.pravatar.cc/80?img=12" alt="Photo client Marie Dubois" class="w-16 h-16 rounded-full mr-4 border-2 border-primary">
-                        <div>
-                            <h4 class="font-bold text-dark">Marie Dubois</h4>
-                            <div class="flex text-primary text-sm">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+    <section class="py
