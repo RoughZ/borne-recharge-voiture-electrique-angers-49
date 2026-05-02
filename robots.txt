@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+Sitemap: https://borne-recharge-voiture-electrique-angers-49.pages.dev/sitemap.xml
