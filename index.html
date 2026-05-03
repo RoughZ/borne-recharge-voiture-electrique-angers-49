@@ -20,7 +20,7 @@
 <body class="font-sans antialiased">
 <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
 <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-<a href="index.html" class="text-lg font-bold text-gray-900">borne-recharge-voiture-electrique-angers-49</a>
+<a href="index.html" class="flex items-center gap-1.5 text-lg font-bold"><svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg><span class="text-emerald-600">Borne</span><span class="text-gray-500 font-medium"> Recharge Voiture Electrique Angers 49</span></a>
 <div class="hidden md:flex items-center gap-8"><a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Accueil</a> <a href="index.html#articles" class="text-sm font-medium text-gray-600 hover:text-gray-900">Articles</a> <a href="index.html#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900">Contact</a>
 <a href="index.html#contact" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">Nous contacter</a></div>
 <button onclick="var m=document.getElementById('m-menu');m.classList.toggle('hidden')" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100">
@@ -67,14 +67,6 @@
 <h3 class="text-xl font-semibold mb-2 text-gray-900">Expertise locale</h3>
 <p class="text-gray-600 leading-relaxed">Connaissance approfondie des installations à Angers et ses alentours. Service de proximité et réactif.</p>
 </div>
-</div></div></section>
-
-<section class="py-16 bg-gray-50">
-<div class="max-w-5xl mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<img src="https://picsum.photos/seed/Angers,France,ville0/1200/600" alt="Angers France ville" class="rounded-xl w-full h-52 object-cover" loading="lazy">
-<img src="https://picsum.photos/seed/Angers,France,ville1/1200/600" alt="Angers France ville" class="rounded-xl w-full h-52 object-cover" loading="lazy">
-<img src="https://picsum.photos/seed/Angers,France,ville2/1200/600" alt="Angers France ville" class="rounded-xl w-full h-52 object-cover" loading="lazy">
 </div></div></section>
 
 <section class="py-16" id="articles">
@@ -147,7 +139,8 @@ async function submitForm(e){
       headers:{'Content-Type':'application/json','apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkcHJlcHd6eW9hdmZrbGRlbmF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMDUwNzAsImV4cCI6MjA5MTU4MTA3MH0.BJrT5MZWnq3UB3qx-c-ximJIPPnPoX1olM6hcPM7J8A','Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkcHJlcHd6eW9hdmZrbGRlbmF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMDUwNzAsImV4cCI6MjA5MTU4MTA3MH0.BJrT5MZWnq3UB3qx-c-ximJIPPnPoX1olM6hcPM7J8A','Prefer':'return=minimal'},
       body:JSON.stringify({site_id:'d4e58e92-6a3f-4794-aafa-f94037e27cdd',name:e.target.name.value,phone:e.target.phone.value,email:e.target.email.value,message:e.target.message?e.target.message.value:'',optin:e.target.optin?e.target.optin.checked:false,page_url:window.location.href})
     });
-    msg.textContent=r.ok?'Demande envoyee, nous vous repondrons.':'Erreur, veuillez reessayer.';
+    const body=r.ok?null:await r.text();
+    msg.textContent=r.ok?'Demande envoyee, nous vous repondrons.':('Erreur '+r.status+': '+body);
     msg.className=r.ok?'block text-green-600 text-sm mt-2 text-center':'block text-red-600 text-sm mt-2 text-center';
     if(r.ok)e.target.reset();
   }catch(err){
