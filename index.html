@@ -137,7 +137,7 @@ async function submitForm(e){
     const r=await fetch('https://qdprepwzyoavfkldenat.supabase.co/rest/v1/leads',{
       method:'POST',
       headers:{'Content-Type':'application/json','apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkcHJlcHd6eW9hdmZrbGRlbmF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMDUwNzAsImV4cCI6MjA5MTU4MTA3MH0.BJrT5MZWnq3UB3qx-c-ximJIPPnPoX1olM6hcPM7J8A','Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkcHJlcHd6eW9hdmZrbGRlbmF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMDUwNzAsImV4cCI6MjA5MTU4MTA3MH0.BJrT5MZWnq3UB3qx-c-ximJIPPnPoX1olM6hcPM7J8A','Prefer':'return=minimal'},
-      body:JSON.stringify({site_id:'d4e58e92-6a3f-4794-aafa-f94037e27cdd',name:e.target.name.value,phone:e.target.phone.value,email:e.target.email.value,message:e.target.message?e.target.message.value:'',optin:e.target.optin?e.target.optin.checked:false,page_url:window.location.href})
+      body:JSON.stringify({site_id:'d4e58e92-6a3f-4794-aafa-f94037e27cdd',name:e.target.name.value,phone:e.target.phone.value,email:e.target.email.value,message:e.target.message?e.target.message.value:'',page_url:window.location.href})
     });
     const body=r.ok?null:await r.text();
     msg.textContent=r.ok?'Demande envoyee, nous vous repondrons.':('Erreur '+r.status+': '+body);
