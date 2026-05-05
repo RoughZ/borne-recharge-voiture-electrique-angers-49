@@ -170,4 +170,26 @@ article blockquote{border-left:4px solid #e5e7eb;padding-left:1rem;margin:1.5rem
 </div>
 </footer>
 
+<div id="cookie-banner" style="display:none" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
+<div class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row items-start md:items-center gap-4 justify-between">
+<p class="text-sm text-gray-700 leading-relaxed flex-1">Ce site utilise des cookies techniques necessaires a son fonctionnement. Aucun cookie publicitaire n'est utilise. <a href="../donnees.html" class="underline hover:text-green-600">En savoir plus</a>.</p>
+<div class="flex items-center gap-3 flex-shrink-0">
+<button id="cookie-refuse" class="border border-gray-300 hover:bg-gray-100 text-gray-700 font-medium px-4 py-2 rounded-lg text-sm transition-colors cursor-pointer">Refuser</button>
+<button id="cookie-accept" class="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors cursor-pointer">Accepter</button>
+</div>
+</div>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('cookie-banner');
+  if(!localStorage.getItem('cookie_consent'))b.style.display='';
+  document.getElementById('cookie-accept').onclick=function(){
+    localStorage.setItem('cookie_consent','accepted');b.style.display='none';
+  };
+  document.getElementById('cookie-refuse').onclick=function(){
+    localStorage.setItem('cookie_consent','refused');b.style.display='none';
+  };
+})();
+</script>
+
 </body></html>
